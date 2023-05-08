@@ -1,4 +1,15 @@
 streamlit
 pandas
 numpy
+sklearn
+importlib-metadata
+jsonschema
+numpy
+packaging
+pandas
+Pillow
 scikit-learn
+scipy
+streamlit
+typing_extensions
+virtualenv
