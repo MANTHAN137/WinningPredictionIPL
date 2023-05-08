@@ -2,14 +2,18 @@ import streamlit as st
 import pickle
 import pandas as pd
 
-teams = ['Sunrisers Hyderabad',
- 'Mumbai Indians',
- 'Royal Challengers Bangalore',
- 'Kolkata Knight Riders',
- 'Kings XI Punjab',
- 'Chennai Super Kings',
- 'Rajasthan Royals',
- 'Delhi Capitals']
+teams = [
+    'Chennai Super Kings',
+    'Delhi Capitals',
+    'Gujarat Titans',
+    'Kolkata Knight Riders',
+    'Lucknow Super Giants',
+    'Mumbai Indians',
+    'Punjab Kings',
+    'Rajasthan Royals',
+    'Royal Challengers Bangalore',
+    'Sunrisers Hyderabad'    
+]
 
 cities = ['Hyderabad', 'Bangalore', 'Mumbai', 'Indore', 'Kolkata', 'Delhi',
        'Chandigarh', 'Jaipur', 'Chennai', 'Cape Town', 'Port Elizabeth',
@@ -19,8 +23,10 @@ cities = ['Hyderabad', 'Bangalore', 'Mumbai', 'Indore', 'Kolkata', 'Delhi',
        'Sharjah', 'Mohali', 'Bengaluru']
 
 pipe = pickle.load(open('pipe.pkl','rb'))
-st.title('IPL Win Predictor')
+st.title('IPL-Win-Predictor')
 
+
+# col1, col2 = st.beta_columns(2)
 col1, col2 = st.columns(2)
 
 with col1:
@@ -32,7 +38,9 @@ selected_city = st.selectbox('Select host city',sorted(cities))
 
 target = st.number_input('Target')
 
+# col3,col4,col5 = st.beta_columns(3)
 col3,col4,col5 = st.columns(3)
+
 
 with col3:
     score = st.number_input('Score')
@@ -55,3 +63,27 @@ if st.button('Predict Probability'):
     win = result[0][1]
     st.header(batting_team + "- " + str(round(win*100)) + "%")
     st.header(bowling_team + "- " + str(round(loss*100)) + "%")
+    
+    
+
+    
+
+st.write("")  # Add a blank line
+st.write("")  # Add a blank line
+st.write("")  # Add a blank line
+st.write("")  # Add a blank line
+# Create a container for the footer
+footer_container = st.container()
+
+# Add copyright information in the footer container
+# with footer_container:
+#     st.write("© 2023 Mihir Bipin Chavan. Made with ❤️ and 🐍")
+
+
+    
+    
+    
+    
+    
+    
+    
